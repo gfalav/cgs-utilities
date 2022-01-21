@@ -1,20 +1,13 @@
-import { Grid, makeStyles, Stack, Typography } from "@mui/material"
+import { Stack} from "@mui/material"
 import SimpleAccordion from "./Acordion"
-import Logo from "./Logo"
+import LogoMark from './LogoMark'
 
 
 const SidebarMenu = () => {
 
     return (
-        <Stack className="mydiv">
-            <Grid container>
-                <Grid item xs={4}>
-                    <Logo sx={{width: '40px', height: '40px'}}/> 
-                </Grid>
-                <Grid item xs={8}>
-                    <Typography>The Swarm</Typography>
-                </Grid>
-            </Grid>
+        <Stack>
+            <LogoMark />
             <SimpleAccordion />
 
         </Stack>   

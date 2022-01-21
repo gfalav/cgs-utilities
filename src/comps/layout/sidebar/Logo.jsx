@@ -1,10 +1,9 @@
-import { Box } from '@mui/material'
 import Logoimg from '../../../images/CGSlogo.png'
 
 const Logo = () => {
 
     return ( 
-        <Box component='img' src={Logoimg} alt='Img Logo' />
+        <img src={Logoimg} alt='Img Logo' width='70px' height='35px'/>
     )
 }
 

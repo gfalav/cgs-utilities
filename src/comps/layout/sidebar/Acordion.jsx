@@ -16,7 +16,7 @@ export default function SimpleAccordion() {
           id="panel1a-header"
           sx={{bgcolor: '#233044', color: 'white'}}
         >
-          <Typography>Accordion 1</Typography>
+          <Typography>Menu</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{bgcolor: '#233044', color: 'white'}}>
           <MenuItem>Opción 1</MenuItem>
@@ -33,7 +33,7 @@ export default function SimpleAccordion() {
           id="panel1a-header"
           sx={{bgcolor: '#233044', color: 'white'}}
         >
-          <Typography>Accordion 1</Typography>
+          <Typography>Menu</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{bgcolor: '#233044', color: 'white'}}>
           <MenuItem>Opción 1</MenuItem>
@@ -50,7 +50,7 @@ export default function SimpleAccordion() {
           id="panel1a-header"
           sx={{bgcolor: '#233044', color: 'white'}}
         >
-          <Typography>Accordion 1</Typography>
+          <Typography>Menu</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{bgcolor: '#233044', color: 'white'}}>
           <MenuItem>Opción 1</MenuItem>
@@ -67,7 +67,7 @@ export default function SimpleAccordion() {
           id="panel1a-header"
           sx={{bgcolor: '#233044', color: 'white'}}
         >
-          <Typography>Accordion 1</Typography>
+          <Typography>Menu</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{bgcolor: '#233044', color: 'white'}}>
           <MenuItem>Opción 1</MenuItem>
@@ -84,7 +84,7 @@ export default function SimpleAccordion() {
           id="panel1a-header"
           sx={{bgcolor: '#233044', color: 'white'}}
         >
-          <Typography>Accordion 1</Typography>
+          <Typography>Menu</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{bgcolor: '#233044', color: 'white'}}>
           <MenuItem>Opción 1</MenuItem>
@@ -101,7 +101,7 @@ export default function SimpleAccordion() {
           id="panel1a-header"
           sx={{bgcolor: '#233044', color: 'white'}}
         >
-          <Typography>Accordion 1</Typography>
+          <Typography>Menu</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{bgcolor: '#233044', color: 'white'}}>
           <MenuItem>Opción 1</MenuItem>
@@ -118,7 +118,7 @@ export default function SimpleAccordion() {
           id="panel1a-header"
           sx={{bgcolor: '#233044', color: 'white'}}
         >
-          <Typography>Accordion 1</Typography>
+          <Typography>Menu</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{bgcolor: '#233044', color: 'white'}}>
           <MenuItem>Opción 1</MenuItem>
@@ -135,7 +135,7 @@ export default function SimpleAccordion() {
           id="panel1a-header"
           sx={{bgcolor: '#233044', color: 'white'}}
         >
-          <Typography>Accordion 1</Typography>
+          <Typography>Menu</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{bgcolor: '#233044', color: 'white'}}>
           <MenuItem>Opción 1</MenuItem>
