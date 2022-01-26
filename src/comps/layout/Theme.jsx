@@ -3,6 +3,7 @@ import { createTheme } from "@mui/material";
 const theme = createTheme({
     typography: {
       fontFamily: [
+
         'Open Sans Condensed',
         '-apple-system',
         'BlinkMacSystemFont',
@@ -15,7 +16,8 @@ const theme = createTheme({
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
       ].join(','),
-    },
+      fontSize: 15
+    }
   });
 
   export default theme
