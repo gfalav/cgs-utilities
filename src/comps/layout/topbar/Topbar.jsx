@@ -6,7 +6,7 @@ import MailIcon from '@mui/icons-material/Mail'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 
 
-const Topbar = (drawerWidth, toggleMenu, setToggleMenu) => {
+const Topbar = ({drawerWidth, toggleMenu, setToggleMenu}) => {
     const [anchorEl, setAnchorEl] = React.useState(null)
     const open = Boolean(anchorEl)
 
@@ -54,6 +54,8 @@ const Topbar = (drawerWidth, toggleMenu, setToggleMenu) => {
                     >
                     <MenuItem onClick={handleClose}>SignIn</MenuItem>
                     <MenuItem onClick={handleClose}>SignUp</MenuItem>
+                    <MenuItem onClick={handleClose}>SignOut</MenuItem>
+                    <MenuItem onClick={handleClose}>MyAccount</MenuItem>
                 </Menu>
             </Toolbar>
         </AppBar>
