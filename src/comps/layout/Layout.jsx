@@ -3,10 +3,11 @@ import { Box, Divider, Drawer, useMediaQuery } from "@mui/material"
 import SideMenu from './sidebar/SideMenu'
 import LogoMark from './sidebar/LogoMark'
 import Topbar from './topbar/Topbar'
+import { Outlet } from 'react-router-dom'
 
-const Layout = () => {
+const Layout = (props) => {
     const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
-    const drawerWidth = 240
+    const drawerWidth = props.drawerWidth
     const [toggleMenu, setToggleMenu] = React.useState(false)
 
     const DrawerIn = () => {
@@ -22,8 +23,14 @@ const Layout = () => {
 
 
     return(
-        <Box sx={{display: 'flex'}}>
+        <Box sx={{display: 'block'}}>
             <Topbar drawerWidth={drawerWidth} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
+            <Box sx={{  width: { sm: `calc(100% - ${drawerWidth}px)` },
+                        ml: { sm: `${drawerWidth}px` },
+                        mt: '70px'
+                    }}>
+                <Outlet />
+            </Box>
             { !isMobile && <Drawer 
                                 variant='persistent'
                                 anchor="left"

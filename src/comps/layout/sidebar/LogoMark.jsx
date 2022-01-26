@@ -11,7 +11,7 @@ const LogoMark = () => {
                 <Logo />
             </Grid>
             <Grid container item justifyContent='flex-start' alignItems='center' xs={8} sx={{ }}>
-                <Typography variant="h6" sx={{fontFamily: 'Open Sans Condensed'}}>The Swarm</Typography>
+                <Typography variant="h6" sx={{fontFamily: 'Open Sans Condensed'}}>The Honeycomb</Typography>
             </Grid>
         </Grid>
     )

@@ -7,7 +7,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Layout />
+      <Layout drawerWidth={240} />
     </ThemeProvider>
   );
 }

@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import MailIcon from '@mui/icons-material/Mail'
 import NotificationsIcon from '@mui/icons-material/Notifications'
+import {Link} from 'react-router-dom'
 
 
 const Topbar = ({drawerWidth, toggleMenu, setToggleMenu}) => {
@@ -52,10 +53,10 @@ const Topbar = ({drawerWidth, toggleMenu, setToggleMenu}) => {
                     open={open}
                     onClose={handleClose}
                     >
-                    <MenuItem onClick={handleClose}>SignIn</MenuItem>
-                    <MenuItem onClick={handleClose}>SignUp</MenuItem>
-                    <MenuItem onClick={handleClose}>SignOut</MenuItem>
-                    <MenuItem onClick={handleClose}>MyAccount</MenuItem>
+                    <MenuItem component={Link} to='auth/SignIn' onClick={handleClose}>SignIn</MenuItem>
+                    <MenuItem component={Link} to='auth/SignUp' onClick={handleClose}>SignUp</MenuItem>
+                    <MenuItem component={Link} to='auth/SignOut' onClick={handleClose}>SignOut</MenuItem>
+                    <MenuItem component={Link} to='auth/MyAccount' onClick={handleClose}>MyAccount</MenuItem>
                 </Menu>
             </Toolbar>
         </AppBar>
