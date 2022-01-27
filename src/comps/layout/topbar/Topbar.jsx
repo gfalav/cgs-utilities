@@ -1,18 +1,29 @@
 import * as React from 'react'
-import { AppBar, Badge, Box, IconButton, Menu, MenuItem, Toolbar } from "@mui/material"
+import { AppBar, Badge, Box, IconButton, Menu, MenuItem, Toolbar, Typography } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import MailIcon from '@mui/icons-material/Mail'
 import NotificationsIcon from '@mui/icons-material/Notifications'
-import {Link} from 'react-router-dom'
+import HomeIcon from '@mui/icons-material/Home';
+import {Link, useNavigate} from 'react-router-dom'
+import app from '../../fb/fb'
+import { getAuth,signOut } from 'firebase/auth'
 
 
-const Topbar = ({drawerWidth, toggleMenu, setToggleMenu}) => {
+const Topbar = ({drawerWidth, toggleMenu, setToggleMenu, user}) => {
     const [anchorEl, setAnchorEl] = React.useState(null)
     const open = Boolean(anchorEl)
+    const navigate = useNavigate()
+    const fb = app
+    const auth = getAuth(fb)
 
-    const handleClose = () => {
+
+    const handleClose = (action) => {
         setAnchorEl(null)
+        if (action === 'out') {
+            signOut(auth)
+            navigate('/')
+        }
     }
 
     return(
@@ -20,7 +31,8 @@ const Topbar = ({drawerWidth, toggleMenu, setToggleMenu}) => {
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
-                    backgroundColor: '#ebebeb'                       
+                    backgroundColor: '#ebebeb',
+                    color: 'black'
                   }}
         >
             <Toolbar>
@@ -33,6 +45,16 @@ const Topbar = ({drawerWidth, toggleMenu, setToggleMenu}) => {
                     sx={{ mr: 2, display: {sm: 'none'} }}
                 >
                     <MenuIcon />
+                </IconButton>
+                <IconButton 
+                    size="large"
+                    edge="start"
+                    color="primary"
+                    aria-label="menu"
+                    onClick={() => navigate('/')}
+                    sx={{ mr: 2 }}
+                >
+                    <HomeIcon />
                 </IconButton>
                 <Box sx={{flexGrow: 1}} />
                 <IconButton sx={{mr: 1}}>
@@ -53,11 +75,19 @@ const Topbar = ({drawerWidth, toggleMenu, setToggleMenu}) => {
                     open={open}
                     onClose={handleClose}
                     >
-                    <MenuItem component={Link} to='auth/SignIn' onClick={handleClose}>SignIn</MenuItem>
-                    <MenuItem component={Link} to='auth/SignUp' onClick={handleClose}>SignUp</MenuItem>
-                    <MenuItem component={Link} to='auth/SignOut' onClick={handleClose}>SignOut</MenuItem>
-                    <MenuItem component={Link} to='auth/MyAccount' onClick={handleClose}>MyAccount</MenuItem>
+                        { !user ? 
+                            <div>
+                                <MenuItem component={Link} to='auth/SignIn' onClick={(e) => handleClose('in')}>SignIn</MenuItem>
+                                <MenuItem component={Link} to='auth/SignUp' onClick={(e) => handleClose('up')}>SignUp</MenuItem>
+                            </div>
+                            :
+                            <div>
+                                <MenuItem onClick={(e) => handleClose('out')}>SignOut</MenuItem>
+                                <MenuItem component={Link} to='auth/MyAccount' onClick={(e) => handleClose('account')}>MyAccount</MenuItem>  
+                            </div>
+                        }
                 </Menu>
+                <Typography variant="caption">{user ? user.email : ''}</Typography>
             </Toolbar>
         </AppBar>
     )

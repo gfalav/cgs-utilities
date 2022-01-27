@@ -9,6 +9,7 @@ const Layout = (props) => {
     const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
     const drawerWidth = props.drawerWidth
     const [toggleMenu, setToggleMenu] = React.useState(false)
+    const user = props.user
 
     const DrawerIn = () => {
 
@@ -24,10 +25,10 @@ const Layout = (props) => {
 
     return(
         <Box sx={{display: 'block'}}>
-            <Topbar drawerWidth={drawerWidth} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
+            <Topbar drawerWidth={drawerWidth} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} user={user}/>
             <Box sx={{  width: { sm: `calc(100% - ${drawerWidth}px)` },
                         ml: { sm: `${drawerWidth}px` },
-                        mt: '70px'
+                        mt: { xs: '76px', sm: '80px' }
                     }}>
                 <Outlet />
             </Box>
